@@ -1,4 +1,4 @@
-const VALID_STATUSES = ['Not Started', 'In Progress', 'Completed'];
+export const VALID_STATUSES = ['Not Started', 'In Progress', 'Completed'];
 
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 

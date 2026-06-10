@@ -52,6 +52,7 @@ Base path: `/api/courses`
 |----------|-----------------------|--------------------------|------------------|
 | `GET`    | `/api/health`         | Health check             | `200` + `{ status: "ok" }` |
 | `GET`    | `/api/courses`        | List all courses         | `200` + JSON array |
+| `GET`    | `/api/courses/stats`  | Course statistics        | `200` + stats object |
 | `GET`    | `/api/courses/:id`    | Get one course by ID     | `200` + course object |
 | `POST`   | `/api/courses`        | Create a new course      | `201` + created course |
 | `PUT`    | `/api/courses/:id`    | Update a course (full)   | `200` + updated course |
@@ -96,6 +97,25 @@ Base path: `/api/courses`
 
 ```bash
 curl http://localhost:3000/api/courses
+```
+
+### Get course statistics
+
+```bash
+curl http://localhost:3000/api/courses/stats
+```
+
+Example response:
+
+```json
+{
+  "total": 2,
+  "byStatus": {
+    "Not Started": 1,
+    "In Progress": 1,
+    "Completed": 0
+  }
+}
 ```
 
 ### Create a course

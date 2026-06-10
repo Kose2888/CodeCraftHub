@@ -4,6 +4,7 @@ import * as coursesController from '../controllers/coursesController.js';
 const router = Router();
 
 router.get('/', coursesController.getAllCourses);
+router.get('/stats', coursesController.getCourseStats);
 router.get('/:id', coursesController.getCourseById);
 router.post('/', coursesController.createCourse);
 router.put('/:id', coursesController.updateCourse);

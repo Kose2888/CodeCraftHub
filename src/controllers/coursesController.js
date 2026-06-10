@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import * as fileStore from '../utils/fileStore.js';
-import { validateCourseInput } from '../utils/validation.js';
+import { validateCourseInput, VALID_STATUSES } from '../utils/validation.js';
 
 export async function getAllCourses(req, res) {
   try {
@@ -8,6 +8,26 @@ export async function getAllCourses(req, res) {
     res.json(courses);
   } catch {
     res.status(500).json({ error: 'Failed to read courses' });
+  }
+}
+
+export async function getCourseStats(req, res) {
+  try {
+    const courses = await fileStore.readCourses();
+    const byStatus = Object.fromEntries(VALID_STATUSES.map((status) => [status, 0]));
+
+    for (const course of courses) {
+      if (byStatus[course.status] !== undefined) {
+        byStatus[course.status]++;
+      }
+    }
+
+    res.json({
+      total: courses.length,
+      byStatus,
+    });
+  } catch {
+    res.status(500).json({ error: 'Failed to read course statistics' });
   }
 }
 
