@@ -1,0 +1,17 @@
+{
+  "name": "codecrafthub",
+  "version": "1.0.0",
+  "description": "A simple personalized learning platform for tracking courses",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": ["learning", "courses", "rest-api"],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^5.1.0",
+    "uuid": "^11.1.0"
+  }
+}
