@@ -16,5 +16,14 @@
     "status": "In Progress",
     "createdAt": "2026-06-10T22:18:57.650Z",
     "updatedAt": "2026-06-12T20:51:13.604Z"
+  },
+  {
+    "id": "7fd372ef-4945-43df-ad5d-b9717c7d252c",
+    "name": "Python",
+    "description": "Python Fundamentals",
+    "targetCompletionDate": "2026-07-14",
+    "status": "Not Started",
+    "createdAt": "2026-06-12T20:52:03.944Z",
+    "updatedAt": "2026-06-12T20:52:03.944Z"
   }
 ]
